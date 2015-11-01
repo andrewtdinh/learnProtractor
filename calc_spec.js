@@ -1,13 +1,29 @@
 // spec.js
 describe('Protractor Demo App', function() {
-  it('should add one and two', function() {
+  var firstNumber = element(by.model('first'));
+  var secondNumber = element(by.model('second'));
+  var goButton = element(by.id('gobutton'));
+  var latestResult = element(by.binding('latest'));
+
+  beforeEach(function() {
     browser.get('http://juliemr.github.io/protractor-demo/');
-    element(by.model('first')).sendKeys(6);
-    element(by.model('second')).sendKeys(7);
+  });
 
-    element(by.id('gobutton')).click();
+  it('should have a title', function() {
+    expect(browser.getTitle()).toEqual('Super Calculator');
+  });
 
-    expect(element(by.binding('latest')).getText()).
-        toEqual('13'); // This is wrong!
+  it('should add one and two', function() {
+    firstNumber.sendKeys(1);
+    secondNumber.sendKeys(2);
+
+    goButton.click();
+
+    expect(latestResult.getText()).toEqual('3');
+  });
+
+  it('should add four and six', function() {
+    // Fill this in.
+    expect(latestResult.getText()).toEqual('10');
   });
 });
