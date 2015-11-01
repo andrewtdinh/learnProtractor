@@ -6,6 +6,12 @@ describe('Protractor Demo App', function() {
   var latestResult = element(by.binding('latest'));
   var history = element.all(by.repeater('result in memory'));
 
+  function add(a, b) {
+    firstNumber.sendKeys(a);
+    secondNumber.sendKeys(b);
+    goButton.click();
+  }
+
   beforeEach(function() {
     browser.get('http://juliemr.github.io/protractor-demo/');
   });
@@ -40,6 +46,6 @@ describe('Protractor Demo App', function() {
 
     add(5, 6);
 
-    expect(history.count()).toEqual(0); // This is wrong!
+    expect(history.count()).toEqual(3); 
   });
 });
