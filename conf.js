@@ -3,9 +3,14 @@ exports.config = {
   directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
-  capabilities: {
+  // capabilities: {
+  //   'browserName': 'firefox'
+  // },
+  multiCapabilities: [{
     'browserName': 'firefox'
-  },
+  }, {
+    'browserName': 'chrome'  
+  }],
 
   // Framework to use. Jasmine 2 is recommended.
   framework: 'jasmine2',
