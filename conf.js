@@ -3,14 +3,15 @@ exports.config = {
   directConnect: true,
 
   // Capabilities to be passed to the webdriver instance.
-  // capabilities: {
-  //   'browserName': 'firefox'
-  // },
-  multiCapabilities: [{
+  capabilities: {
     'browserName': 'firefox'
-  }, {
-    'browserName': 'chrome'  
-  }],
+  },
+  // Uncomment the below lines to run tests on both browsers simultaneously
+  // multiCapabilities: [{
+  //   'browserName': 'firefox'
+  // }, {
+  //   'browserName': 'chrome'
+  // }],
 
   // Framework to use. Jasmine 2 is recommended.
   framework: 'jasmine2',
