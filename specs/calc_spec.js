@@ -43,9 +43,11 @@ describe('Protractor Demo App', function() {
     add(3, 4);
 
     expect(history.count()).toEqual(2);
+    expect(history.last().getText()).toContain('1 + 2');
+    expect(history.first().getText()).toContain('foo'); // This is wrong!
 
     add(5, 6);
 
-    expect(history.count()).toEqual(3); 
+    expect(history.count()).toEqual(3);
   });
 });
