@@ -1,3 +1,5 @@
+var AngularHomepage = require('../pages/angular_home.js')
+
 describe('angularjs homepage', function() {
   it('should greet the named user', function() {
     var angularHomepage = new AngularHomepage();
