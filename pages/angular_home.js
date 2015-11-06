@@ -1,4 +1,4 @@
-var AngularHomepage = function() {
+var AngularHome = function() {
   this.nameInput = element(by.model('yourName'));
   this.greeting = element(by.binding('yourName'));
 
@@ -14,3 +14,5 @@ var AngularHomepage = function() {
     return this.greeting.getText();
   };
 };
+
+module.exports = AngularHome
